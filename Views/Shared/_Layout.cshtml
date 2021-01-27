@@ -8,27 +8,71 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">InstemTest</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-	            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-		            <ul class="navbar-nav flex-grow-1">
-			            <li class="nav-item">
-				            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-			            </li>
-			            <li class="nav-item">
-			            </li>
-		            </ul>
-	            </div>
-	            <input type="text" id="myInput" onClick="myFunction()" placeholder="Search for movie.." title="Type in a movie name">
-            </div>
-        </nav>
-    </header>
+<header>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		body {
+			font-family: Arial;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		form.example input[type=text] {
+			padding: 10px;
+			font-size: 17px;
+			border: 1px solid grey;
+			float: left;
+			width: 80%;
+			background: #f1f1f1;
+		}
+
+		form.example button {
+			float: left;
+			width: 20%;
+			padding: 10px;
+			background: #2196F3;
+			color: white;
+			font-size: 17px;
+			border: 1px solid grey;
+			border-left: none;
+			cursor: pointer;
+		}
+
+		form.example button:hover {
+			background: #0b7dda;
+		}
+
+		form.example::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+	</style>
+	<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+		<div class="container">
+			<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">InstemTest</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+			        aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+				<ul class="navbar-nav flex-grow-1">
+					<li class="nav-item">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+					</li>
+					<li class="nav-item">
+					</li>
+				</ul>
+			</div>
+			<form class="example" action="/action_page.php">
+				<input type="text" placeholder="Search.." name="search">
+				<button type="submit"><i class="fa fa-search"></i></button>
+			</form>
+		</div>
+	</nav>
+</header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

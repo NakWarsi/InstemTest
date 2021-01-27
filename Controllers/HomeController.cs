@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using InstemTest.Services;
 
 namespace InstemTest.Controllers
 {
@@ -20,7 +21,9 @@ namespace InstemTest.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var x = new MoviesServiceProvider();
+            var y =x.GetTopFourMovies();
+            return View(y);
         }
 
         public IActionResult Privacy()

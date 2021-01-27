@@ -1,8 +1,24 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using System.Data
+@model IEnumerable<InstemTest.Models.MovieDataModel>
+@{
+	ViewData["Title"] = "Movie List Manager";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	<h1 class="display-4">Latest Movies</h1>
+	<table style="width: 100%">
+		<tr>
+			<th>MovieName</th>
+			<th>releaseYear</th>
+		</tr>
+		@{
+			foreach (var row in Model)
+			{
+				<tr>
+					<td>@row.Title</td>
+					<td>@row.Year</td>
+				</tr>
+			}
+		}
+	</table>
 </div>

@@ -14,7 +14,7 @@
 			foreach (var row in Model)
 			{
 				<tr>
-					<td>@row.Title</td>
+					<a href="/Home/MovieListView?search=@row.Title">@row.Title</a>
 				</tr>
 			}
 		}

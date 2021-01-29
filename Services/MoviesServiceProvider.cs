@@ -27,6 +27,10 @@ namespace InstemTest.Services
 
         public List<MovieDataModel> SearchMovies(string searchSting)
         {
+            if (string.IsNullOrWhiteSpace(searchSting))
+            {
+                return _allMovies;
+            }
             List<MovieDataModel> matchedMovie = new List<MovieDataModel>();
             foreach (var row in _allMovies)
             {

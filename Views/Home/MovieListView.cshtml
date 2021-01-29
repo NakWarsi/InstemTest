@@ -1,7 +1,22 @@
-﻿
+﻿@using System.Data
+@model IEnumerable<InstemTest.Models.MovieDataModel>
 @{
-    ViewData["Title"] = "MovieListView";
+	ViewData["Title"] = "Movie List Manager";
 }
 
-<h1>MovieListView</h1>
-
+<div class="text-center">
+	<h1 class="display-4">Latest Movies</h1>
+	<table style="width: 100%">
+		<tr>
+			<th>MovieName</th>
+		</tr>
+		@{
+			foreach (var row in Model)
+			{
+				<tr>
+					<td>@row.Title</td>
+				</tr>
+			}
+		}
+	</table>
+</div>

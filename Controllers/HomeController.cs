@@ -13,17 +13,19 @@ namespace InstemTest.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly MoviesServiceProvider _moviesServiceProvider;
+        public HomeController(
+            ILogger<HomeController> logger,
+            MoviesServiceProvider moviesServiceProvider)
         {
             _logger = logger;
+            _moviesServiceProvider = moviesServiceProvider;
         }
 
         public IActionResult Index()
         {
-            var x = new MoviesServiceProvider();
-            var y =x.GetTopFourMovies();
-            return View(y);
+            var topFourMovies = _moviesServiceProvider.GetTopFourMovies();
+            return View(topFourMovies);
         }
 
         public IActionResult Privacy()
@@ -33,8 +35,8 @@ namespace InstemTest.Controllers
 
         public IActionResult MovieListView(string search)
         {
-
-            return View();
+            var movies = _moviesServiceProvider.SearchMovies(search);
+            return View(movies);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

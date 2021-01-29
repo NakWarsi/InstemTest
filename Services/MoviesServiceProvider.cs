@@ -42,6 +42,11 @@ namespace InstemTest.Services
             return matchedMovie;
         }
 
+        public MovieDataModel GetFirstMatchedMovie(string movieName)
+        {
+            return _allMovies.FirstOrDefault(x => x.Title == movieName);
+        }
+
         private bool IfPatternExist(string patternArg, string txtArg)
         {
 

@@ -1,7 +1,11 @@
-﻿
+﻿@model MovieDataModel
 @{
-    ViewData["Title"] = "MovieDetailView";
+	ViewData["Title"] = "Movie Details";
 }
 
 <h1>MovieDetailView</h1>
+<div>
+	<h1> Movie Name: @Model.Title </h1>
+	<h1> Movie Year: @Model.Year </h1>
 
+</div>

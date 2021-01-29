@@ -3,9 +3,34 @@
 	ViewData["Title"] = "Movie Details";
 }
 
-<h1>MovieDetailView</h1>
+<h1>@Model.Title</h1>
 <div>
-	<h1> Movie Name: @Model.Title </h1>
-	<h1> Movie Year: @Model.Year </h1>
+	<h4>Movie Name: @Model.Title</h4>
+	<h4>Movie Year: @Model.Year</h4>
+	<h4>Directors: @{
+		               foreach (var row in @Model.Info.Directors)
+		               {
+							<td>@row</td>
+		               }
+	               }</h4>
+	<h4>Release Date: @Model.Info.Release_date.ToString("yyyy-MM-ddTHH")</h4>
+	<h4>Rating: @Model.Info.Rating</h4>
+	<h4>Rank: @Model.Info.Rank</h4>
+	<h4>Running_time_secs: @Model.Info.Running_time_secs</h4>
+
+	<h4>Actors: @{
+		            foreach (var row in @Model.Info.Actors)
+		            {
+			            <td>@row, </td>
+		            }
+	            }</h4>
+
+	<h4>Geners: @{
+		            foreach (var row in @Model.Info.Actors)
+		            {
+			            <td>@row, </td>
+		            }
+	            }</h4>
+	<h4>Plot: <p>@Model.Info.Plot</p></h4>
 
 </div>

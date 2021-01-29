@@ -8,11 +8,26 @@ namespace InstemTest.Services
 {
     public class MoviesServiceProvider
     {
+        private List<MovieDataModel> _allMovies;
+        public MoviesServiceProvider()
+        { 
+            _allMovies = JsonConvert
+                .DeserializeObject<List<MovieDataModel>>(File.ReadAllText(@"./Resouces/moviedata.json"));
+        }
+
         public List<MovieDataModel> GetTopFourMovies()
         {
-            var allMovies = JsonConvert.DeserializeObject<List<MovieDataModel>>(File.ReadAllText(@"./Resouces/moviedata.json"));
+            
+            var topFour = _allMovies
+                .OrderByDescending(x => x.Year)
+                .Take(4)
+                .ToList();
+            return topFour;
+        }
 
-            var topFour = allMovies
+        public List<MovieDataModel> SearchMovies(string searchSting)
+        {
+            var topFour = _allMovies
                 .OrderByDescending(x => x.Year)
                 .Take(4)
                 .ToList();

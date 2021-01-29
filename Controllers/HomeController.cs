@@ -28,11 +28,6 @@ namespace InstemTest.Controllers
             return View(topFourMovies);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         public IActionResult MovieListView(string search)
         {
             var movies = _moviesServiceProvider.SearchMovies(search);
@@ -45,6 +40,11 @@ namespace InstemTest.Controllers
             return View(movies);
         }
 
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

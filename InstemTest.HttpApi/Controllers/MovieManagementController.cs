@@ -21,22 +21,22 @@ namespace InstemTest.HttpApi.Controllers
             _movieManagerService = movieManagerService;
         }
 
-        [HttpGet]
+        [HttpGet("latest")]
         public async Task<IEnumerable<MovieSummery>> GetLatestMovies()
         {
-            return await _movieManagerService.AllMovies();
+            return await _movieManagerService.LatestMovies();
         }
 
-        [HttpGet]
+        [HttpGet("all")]
         public async Task<IEnumerable<MovieSummery>> GetAllMovies()
         {
             return await _movieManagerService.AllMovies();
         }
 
-        [HttpGet("{Title}")]
-        public async Task<List<MovieSummery>> GetMatchedMovies(string title)
+        [HttpGet("summary/{searchString}")]
+        public async Task<List<MovieSummery>> GetMatchedMovies(string searchString)
         {
-            return await _movieManagerService.SearchMovies(title);
+            return await _movieManagerService.SearchMovies(searchString);
         }
 
         [HttpGet("{Title}")]

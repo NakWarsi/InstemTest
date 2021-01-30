@@ -33,7 +33,7 @@ namespace InstemTest.HttpApi
                 new MovieManagementResourceFileRepository());
 
             services.AddControllers();
-            services.AddSwaggerGen();
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,11 +47,7 @@ namespace InstemTest.HttpApi
             app.UseHttpsRedirection();
 
             app.UseSwagger();
-
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            });
+            app.UseSwaggerUi3();
 
             app.UseRouting();
 

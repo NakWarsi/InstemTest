@@ -17,7 +17,7 @@ namespace InstemTest.Adapter
         public MovieManagementResourceFileRepository()
         {
             _allMovies = JsonConvert
-                .DeserializeObject<List<Movie>>(File.ReadAllText(@"./Resouces/moviedata.json"));
+                .DeserializeObject<List<Movie>>(File.ReadAllText(@"./Resources/moviedata.json"));
 
         }
 

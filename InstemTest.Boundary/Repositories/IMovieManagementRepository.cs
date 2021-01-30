@@ -6,8 +6,8 @@ namespace InstemTest.Boundary.Repositories
 {
     public interface IMovieManagementRepository
     {
-        Task<List<Movie>> GetFourLatestMovies();
-        Task<List<Movie>> SearchMovies(string searchSting);
+        Task<List<MovieSummery>> GetFourLatestMovies();
+        Task<List<MovieSummery>> GetAllMovies();
         Task<Movie> GetMovieByTitle(string movieName);
     }
 }

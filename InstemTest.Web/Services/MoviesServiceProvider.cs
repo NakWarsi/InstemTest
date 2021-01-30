@@ -13,11 +13,9 @@ namespace InstemTest.Services
     public class MoviesServiceProvider
     {
         private readonly HttpClient _client;
-        private readonly PatternMatcherService _patternMatcherService;
         public MoviesServiceProvider()
         { 
             _client = new HttpClient();
-            _patternMatcherService = new PatternMatcherService();
         }
 
         public List<MovieDataModel> GetTopFourMovies()

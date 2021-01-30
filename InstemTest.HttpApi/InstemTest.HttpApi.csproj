@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InstemTest.Boundary\InstemTest.Boundary.csproj" />
+    <ProjectReference Include="..\InstemTest.Service\InstemTest.Service.csproj" />
+    <ProjectReference Include="..\InstemTest.SharedSdk\InstemTest.SharedSdk.csproj" />
   </ItemGroup>
 
 

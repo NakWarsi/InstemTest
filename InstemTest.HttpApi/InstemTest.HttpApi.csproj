@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -7,7 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\InstemTest.Boundary\InstemTest.Boundary.csproj" />
     <ProjectReference Include="..\InstemTest.Service\InstemTest.Service.csproj" />
-    <ProjectReference Include="..\InstemTest.SharedSdk\InstemTest.SharedSdk.csproj" />
   </ItemGroup>
 
 

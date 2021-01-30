@@ -1,5 +1,3 @@
-using System;
-
 namespace InstemTest.Models
 {
     public class ErrorViewModel

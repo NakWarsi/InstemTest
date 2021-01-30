@@ -4,7 +4,7 @@ using InstemTest.SharedSdk.Models;
 
 namespace InstemTest.Boundary.Repositories
 {
-    public interface MovieManagementService
+    public interface IMovieManagementRepository
     {
         Task<List<Movie>> GetFourLatestMovies();
         Task<List<Movie>> SearchMovies(string searchSting);

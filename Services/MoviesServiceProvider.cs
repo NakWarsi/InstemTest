@@ -8,11 +8,13 @@ namespace InstemTest.Services
 {
     public class MoviesServiceProvider
     {
-        private List<MovieDataModel> _allMovies;
+        private readonly List<MovieDataModel> _allMovies;
+        private readonly PatternMatcherService _patternMatcherService;
         public MoviesServiceProvider()
         { 
             _allMovies = JsonConvert
                 .DeserializeObject<List<MovieDataModel>>(File.ReadAllText(@"./Resouces/moviedata.json"));
+            _patternMatcherService = new PatternMatcherService();
         }
 
         public List<MovieDataModel> GetTopFourMovies()
@@ -34,7 +36,7 @@ namespace InstemTest.Services
             List<MovieDataModel> matchedMovie = new List<MovieDataModel>();
             foreach (var row in _allMovies)
             {
-                if (IfPatternExist(searchSting,row.Title))
+                if (_patternMatcherService.IfPatternExist(searchSting,row.Title))
                 {
                     matchedMovie.Add(row);
                 }
@@ -45,36 +47,6 @@ namespace InstemTest.Services
         public MovieDataModel GetFirstMatchedMovie(string movieName)
         {
             return _allMovies.FirstOrDefault(x => x.Title == movieName);
-        }
-
-        private bool IfPatternExist(string patternArg, string txtArg)
-        {
-
-            var txt = txtArg.ToUpper();
-            var pattern = patternArg.ToUpper();
-            int patternLength = pattern.Length;
-            int textLength = txt.Length;
-            int textIndex = 0;
-
-            while (textIndex <= textLength - patternLength)
-            {
-                int currentIndex;
-                for (currentIndex = 0; currentIndex < patternLength; currentIndex++)
-                {
-                    if (txt[textIndex + currentIndex] != pattern[currentIndex])
-                        break;
-                }
-
-                if (currentIndex == patternLength)
-                {
-                    return true;
-                }
-                else if (currentIndex == 0)
-                    textIndex = textIndex + 1;
-                else
-                    textIndex = textIndex + currentIndex;
-            }
-            return false;
         }
     }
 }

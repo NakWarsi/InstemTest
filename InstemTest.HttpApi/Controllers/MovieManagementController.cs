@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using InstemTest.SharedSdk.Models;
 
 namespace InstemTest.HttpApi.Controllers
 {
@@ -10,29 +11,31 @@ namespace InstemTest.HttpApi.Controllers
     [Route("[controller]")]
     public class MovieManagementController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<MovieManagementController> _logger;
+        //private readonly MoviesServiceProvider _moviesServiceProvider;
 
-        public MovieManagementController(ILogger<MovieManagementController> logger)
+        public MovieManagementController(
+            ILogger<MovieManagementController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<MovieSummery> GetLatestMovies()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return null;
+        }
+
+        [HttpGet]
+        public IEnumerable<MovieSummery> GetAllMovies()
+        {
+            return null;
+        }
+
+        [HttpGet("{Title}")]
+        public Movie GetMovieDetails(string title)
+        {
+            return null;
         }
     }
 }

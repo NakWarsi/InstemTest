@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstemTest_Tests", "InstemT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstemTest.HttpApi", "InstemTest.HttpApi\InstemTest.HttpApi.csproj", "{30A241EB-2BE9-48D5-935F-966C79D1F4FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstemTest.Boundary", "InstemTest.Boundary\InstemTest.Boundary.csproj", "{E8F6F68B-FCD3-4DB6-A39B-617A2543B8FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstemTest.Adapter", "InstemTest.Adapter\InstemTest.Adapter.csproj", "{7FEF88C2-6B91-4363-9BCA-EEF72875EFCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{30A241EB-2BE9-48D5-935F-966C79D1F4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30A241EB-2BE9-48D5-935F-966C79D1F4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30A241EB-2BE9-48D5-935F-966C79D1F4FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8F6F68B-FCD3-4DB6-A39B-617A2543B8FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F6F68B-FCD3-4DB6-A39B-617A2543B8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8F6F68B-FCD3-4DB6-A39B-617A2543B8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8F6F68B-FCD3-4DB6-A39B-617A2543B8FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FEF88C2-6B91-4363-9BCA-EEF72875EFCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FEF88C2-6B91-4363-9BCA-EEF72875EFCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FEF88C2-6B91-4363-9BCA-EEF72875EFCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FEF88C2-6B91-4363-9BCA-EEF72875EFCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

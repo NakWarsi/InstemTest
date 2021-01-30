@@ -4,8 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\InstemTest.SharedSdk\InstemTest.SharedSdk.csproj" />
-  </ItemGroup>
-
 </Project>

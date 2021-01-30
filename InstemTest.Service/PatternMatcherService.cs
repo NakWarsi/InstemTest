@@ -6,7 +6,7 @@ namespace InstemTest.Service
 {
     internal class PatternMatcherService
     {
-        public bool IfPatternExist(string patternArg, string txtArg)
+        internal bool IfPatternExist(string patternArg, string txtArg)
         {
 
             var txt = txtArg.ToUpper();

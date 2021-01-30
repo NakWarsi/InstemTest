@@ -1,4 +1,4 @@
-﻿using InstemTest.Services;
+﻿using InstemTest.Service;
 using NUnit.Framework;
 
 namespace InstemTest_Tests

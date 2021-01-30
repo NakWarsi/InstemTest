@@ -39,7 +39,7 @@ namespace InstemTest.HttpApi.Controllers
             return await _movieManagerService.SearchMovies(searchString);
         }
 
-        [HttpGet("{Title}")]
+        [HttpGet("{title}")]
         public async Task<Movie> GetMovieDetails(string title)
         {
             return await _movieManagerService.MovieDetails(title);

@@ -30,13 +30,18 @@ namespace InstemTest.Services
 
         public List<MovieDataModel> SearchMovies(string searchSting)
         {
-            
-            return null;
+            var getResponse = _client.GetAsync(ApiUrls.SearchMoviesApiUrl + searchSting).Result;
+            var rawModelData = getResponse.Content.ReadAsStringAsync().Result;
+            var responseDataFromServer = JsonConvert.DeserializeObject<List<MovieDataModel>>(rawModelData);
+            return responseDataFromServer;
         }
 
         public MovieDataModel GetFirstMatchedMovie(string movieName)
         {
-            return  null;
+            var getResponse = _client.GetAsync(ApiUrls.movieDetailApiUrl + movieName).Result;
+            var rawModelData = getResponse.Content.ReadAsStringAsync().Result;
+            var responseDataFromServer = JsonConvert.DeserializeObject<MovieDataModel>(rawModelData);
+            return responseDataFromServer;
         }
     }
 }

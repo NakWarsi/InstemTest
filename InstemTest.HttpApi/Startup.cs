@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using InstemTest.Adapter;
+using InstemTest.Boundary.Repositories;
 using InstemTest.Service;
 
 namespace InstemTest.HttpApi
@@ -27,7 +29,11 @@ namespace InstemTest.HttpApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<MovieManagerService>();
+            services.AddSingleton<IMovieManagementRepository>(p =>
+                new MovieManagementResourceFileRepository());
+
             services.AddControllers();
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +45,13 @@ namespace InstemTest.HttpApi
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseRouting();
 

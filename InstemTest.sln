@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstemTest.Boundary", "Inst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstemTest.Adapter", "InstemTest.Adapter\InstemTest.Adapter.csproj", "{7FEF88C2-6B91-4363-9BCA-EEF72875EFCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstemTest.Service", "InstemTest.Service\InstemTest.Service.csproj", "{696EADDC-882A-4F9E-B131-FB7FF8A30F94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7FEF88C2-6B91-4363-9BCA-EEF72875EFCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FEF88C2-6B91-4363-9BCA-EEF72875EFCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FEF88C2-6B91-4363-9BCA-EEF72875EFCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{696EADDC-882A-4F9E-B131-FB7FF8A30F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{696EADDC-882A-4F9E-B131-FB7FF8A30F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{696EADDC-882A-4F9E-B131-FB7FF8A30F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{696EADDC-882A-4F9E-B131-FB7FF8A30F94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

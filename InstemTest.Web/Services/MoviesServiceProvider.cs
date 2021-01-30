@@ -28,6 +28,13 @@ namespace InstemTest.Services
 
         public List<MovieDataModel> SearchMovies(string searchSting)
         {
+            if (string.IsNullOrWhiteSpace(searchSting))
+            {
+                var allMovies = _client.GetAsync(ApiUrls.AllMoviesApiUrl).Result;
+                var modelData = allMovies.Content.ReadAsStringAsync().Result;
+                var result = JsonConvert.DeserializeObject<List<MovieDataModel>>(modelData);
+                return result;
+            }
             var getResponse = _client.GetAsync(ApiUrls.SearchMoviesApiUrl + searchSting).Result;
             var rawModelData = getResponse.Content.ReadAsStringAsync().Result;
             var responseDataFromServer = JsonConvert.DeserializeObject<List<MovieDataModel>>(rawModelData);

@@ -14,6 +14,7 @@
 			<h1>@Model.Title</h1>
 			<h4>Movie Name: @Model.Title</h4>
 			<h4>Movie Year: @Model.Year</h4>
+			<img src=@Model.Info.Image_url alt="Movie Poster" />
 			<h4>Directors:
 				@{
 					foreach (var row in @Model.Info.Directors)

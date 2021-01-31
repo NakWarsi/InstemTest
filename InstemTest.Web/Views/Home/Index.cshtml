@@ -11,12 +11,19 @@
 			<th>releaseYear</th>
 		</tr>
 		@{
-			foreach (var row in Model)
+			if (Model == null)
 			{
-				<tr>
-					<td>@row.Title</td>
-					<td>@row.Year</td>
-				</tr>
+				<script>alert("Can't retrieve any data from Server");</script>
+			}
+			else
+			{
+				foreach (var row in Model)
+				{
+					<tr>
+						<td>@row.Title</td>
+						<td>@row.Year</td>
+					</tr>
+				}
 			}
 		}
 	</table>

@@ -7,11 +7,18 @@
 	<h3 class="display-4">Movies Found</h3>
 	<table style="width: 100%">
 		@{
-			foreach (var row in Model)
+			if (Model == null)
 			{
-				<tr>
-					<a href="/Home/MovieDetailView?movieName=@row.Title">@row.Title</a><br>
-				</tr>
+				<script>alert("Can't retrieve any data from Server");</script>
+			}
+			else
+			{
+				foreach (var row in Model)
+				{
+					<tr>
+						<a href="/Home/MovieDetailView?movieName=@row.Title">@row.Title</a><br>
+					</tr>
+				}
 			}
 		}
 	</table>

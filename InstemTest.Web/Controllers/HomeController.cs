@@ -1,4 +1,5 @@
-﻿using InstemTest.Models;
+﻿using System;
+using InstemTest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
@@ -21,20 +22,41 @@ namespace InstemTest.Controllers
 
         public IActionResult Index()
         {
-            var topFourMovies = _moviesServiceProvider.GetTopFourMovies();
-            return View(topFourMovies);
+            try
+            {
+                var topFourMovies = _moviesServiceProvider.GetTopFourMovies();
+                return View(topFourMovies);
+            }
+            catch (Exception)
+            {
+                return View(null);
+            }
         }
 
         public IActionResult MovieListView(string search)
         {
-            var movies = _moviesServiceProvider.SearchMovies(search);
-            return View(movies);
+            try
+            {
+                var movies = _moviesServiceProvider.SearchMovies(search);
+                return View(movies);
+            }
+            catch (Exception e)
+            {
+                return View(null);
+            }
         }
 
         public IActionResult MovieDetailView(string movieName)
         {
-            var movies = _moviesServiceProvider.GetFirstMatchedMovie(movieName);
-            return View(movies);
+            try
+            {
+                var movies = _moviesServiceProvider.GetFirstMatchedMovie(movieName);
+                return View(movies);
+            }
+            catch (Exception e)
+            {
+                return View(null);
+            }
         }
 
         public IActionResult Privacy()
